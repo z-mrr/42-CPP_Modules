@@ -6,7 +6,7 @@
 /*   By: jdias-mo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/03 21:42:55 by jdias-mo          #+#    #+#             */
-/*   Updated: 2023/01/05 02:09:42 by jdias-mo         ###   ########.fr       */
+/*   Updated: 2023/01/05 11:57:44 by jdias-mo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -115,8 +115,7 @@ std::string	add_prompt(std::string s)
 	{
 		clear();
 		std::cout << "Adding a new contact (fields can not be empty)" << std::endl;
-		std::cout << std::endl;
-		std::cout << s;
+		std::cout << std::endl << s;
 		std::getline(std::cin >> std::ws, str);
 		if (std::cin.eof() || std::cin.fail())
 			exit (1);

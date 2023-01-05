@@ -6,7 +6,7 @@
 /*   By: jdias-mo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/03 21:47:10 by jdias-mo          #+#    #+#             */
-/*   Updated: 2023/01/05 00:08:20 by jdias-mo         ###   ########.fr       */
+/*   Updated: 2023/01/05 11:57:07 by jdias-mo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,8 +15,6 @@
 
 #include <string>
 #include <iostream>
-#include <cstdlib>
-#include <iomanip>
 
 class Contact
 {
@@ -26,14 +24,14 @@ public:
 	~Contact(void);
 
 	std::string	get_fn(void) const;
-	void		set_fn(std::string);
 	std::string	get_ln(void) const;
-	void		set_ln(std::string);
 	std::string	get_n(void) const;
-	void		set_n(std::string);
 	std::string	get_pn(void) const;
-	void		set_pn(std::string);
 	std::string	get_ds(void) const;
+	void		set_fn(std::string);
+	void		set_ln(std::string);
+	void		set_n(std::string);
+	void		set_pn(std::string);
 	void		set_ds(std::string);
 
 private:
