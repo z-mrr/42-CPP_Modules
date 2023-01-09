@@ -6,11 +6,11 @@
 /*   By: jdias-mo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/03 21:42:55 by jdias-mo          #+#    #+#             */
-/*   Updated: 2023/01/05 11:57:44 by jdias-mo         ###   ########.fr       */
+/*   Updated: 2023/01/09 19:18:04 by jdias-mo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../inc/Phonebook.class.hpp"
+#include "Phonebook.class.hpp"
 
 Phonebook::Phonebook(void) : _i(0), _max(0)
 {

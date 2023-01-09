@@ -6,11 +6,11 @@
 /*   By: jdias-mo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/03 21:47:27 by jdias-mo          #+#    #+#             */
-/*   Updated: 2023/01/04 18:46:02 by jdias-mo         ###   ########.fr       */
+/*   Updated: 2023/01/09 19:17:57 by jdias-mo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../inc/Contact.class.hpp"
+#include "Contact.class.hpp"
 
 Contact::Contact(void)
 {

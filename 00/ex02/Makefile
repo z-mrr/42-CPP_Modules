@@ -6,25 +6,24 @@
 #    By: jdias-mo <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/01/02 14:49:04 by jdias-mo          #+#    #+#              #
-#    Updated: 2023/01/09 19:23:55 by jdias-mo         ###   ########.fr        #
+#    Updated: 2023/01/05 12:14:21 by jdias-mo         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME =			phonebook
+NAME =			tests
 
-SRC =			$(addsuffix .cpp,	main \
-									Contact.class \
-									Phonebook.class)
+SRC =			$(addsuffix .cpp,	tests \
+									Account)
 
 INC_DIR =		inc/
 
-SRC_DIR =		src/
+SRC_DIR =		./
 
 OBJ_DIR =		obj/
 
 OBJ =			$(addprefix $(OBJ_DIR), $(patsubst %.cpp, %.o, $(SRC)))
 
-INC =			-I$(INC_DIR)
+INC =			-I $(INC_DIR)
 
 CC =			c++
 
@@ -35,7 +34,7 @@ RM =			rm -f
 all:			$(NAME)
 
 $(OBJ_DIR)%.o:	$(SRC_DIR)%.cpp
-				$(CC) $(CFLAGS) -c $(<) -o $(@) $(INC)
+				$(CC) $(CFLAGS) -c $(<) -o $(@)
 
 $(OBJ_DIR):
 				mkdir $(OBJ_DIR)

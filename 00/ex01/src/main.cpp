@@ -6,11 +6,11 @@
 /*   By: jdias-mo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/03 21:41:45 by jdias-mo          #+#    #+#             */
-/*   Updated: 2023/01/05 11:57:03 by jdias-mo         ###   ########.fr       */
+/*   Updated: 2023/01/09 19:17:56 by jdias-mo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../inc/Phonebook.class.hpp"
+#include "Phonebook.class.hpp"
 #include <string>
 #include <iostream>
 
