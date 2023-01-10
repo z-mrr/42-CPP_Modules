@@ -6,7 +6,7 @@
 /*   By: jdias-mo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/03 21:42:52 by jdias-mo          #+#    #+#             */
-/*   Updated: 2023/01/05 11:58:14 by jdias-mo         ###   ########.fr       */
+/*   Updated: 2023/01/10 12:02:51 by jdias-mo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,11 +23,11 @@ class Phonebook
 {
 public:
 
-	Phonebook(void);
-	~Phonebook(void);
+	Phonebook();
+	~Phonebook();
 
-	void	add(void);
-	void	search(void) const;
+	void	add();
+	void	search() const;
 
 private:
 
@@ -38,7 +38,7 @@ private:
 
 std::string	trunc(std::string s);
 std::string	add_prompt(std::string s);
-void		pause(void);
-void		clear(void);
+void		pause();
+void		clear();
 
 #endif

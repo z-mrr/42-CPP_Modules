@@ -6,7 +6,7 @@
 /*   By: jdias-mo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/03 21:47:10 by jdias-mo          #+#    #+#             */
-/*   Updated: 2023/01/05 11:57:07 by jdias-mo         ###   ########.fr       */
+/*   Updated: 2023/01/10 12:01:08 by jdias-mo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,20 +14,19 @@
 # define CONTACT_CLASS_HPP
 
 #include <string>
-#include <iostream>
 
 class Contact
 {
 public:
 
-	Contact(void);
-	~Contact(void);
+	Contact();
+	~Contact();
 
-	std::string	get_fn(void) const;
-	std::string	get_ln(void) const;
-	std::string	get_n(void) const;
-	std::string	get_pn(void) const;
-	std::string	get_ds(void) const;
+	std::string	get_fn() const;
+	std::string	get_ln() const;
+	std::string	get_n() const;
+	std::string	get_pn() const;
+	std::string	get_ds() const;
 	void		set_fn(std::string);
 	void		set_ln(std::string);
 	void		set_n(std::string);

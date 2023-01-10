@@ -6,25 +6,25 @@
 /*   By: jdias-mo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/03 21:42:55 by jdias-mo          #+#    #+#             */
-/*   Updated: 2023/01/09 19:18:04 by jdias-mo         ###   ########.fr       */
+/*   Updated: 2023/01/10 12:04:44 by jdias-mo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Phonebook.class.hpp"
 
-Phonebook::Phonebook(void) : _i(0), _max(0)
+Phonebook::Phonebook() : _i(0), _max(0)
 {
 	return ;
 }
 
-Phonebook::~Phonebook(void)
+Phonebook::~Phonebook()
 {
 	clear();
-	std::cout << "Exited PhoneBook. All contacts were lost" << std::endl;
+	std::cout << "Exited PhoneBook. All contacts were lost" << '\n';
 	return ;
 }
 
-void	Phonebook::add(void)
+void	Phonebook::add()
 {
 	int	i;
 
@@ -40,12 +40,12 @@ void	Phonebook::add(void)
 	this->_list[i].set_pn(add_prompt("Phone number: "));
 	this->_list[i].set_ds(add_prompt("Darkest secret: "));
 	clear();
-	std::cout << "Contact successfully added to PhoneBook" << std::endl;
+	std::cout << "Contact successfully added to PhoneBook" << '\n';
 	pause();
 	return ;
 }
 
-void	Phonebook::search(void) const
+void	Phonebook::search() const
 {
 	int	i;
 	int	j;
@@ -57,16 +57,16 @@ void	Phonebook::search(void) const
 	max = this->_max;
 	if (!max)
 	{
-		std::cout << "You do not have any contacts yet" << std::endl;
+		std::cout << "You do not have any contacts yet" << '\n';
 		pause();
 		return ;
 	}
 	while ((str.length() != 1 || str.c_str()[0] <= '0' || str.c_str()[0] - '0' > max))
 	{
 		clear();
-		std::cout << "————————————————————————————————————————————" << std::endl;
-		std::cout << "     INDEX|   F. NAME|   L. NAME|  NICKNAME|" << std::endl;
-		std::cout << "————————————————————————————————————————————" << std::endl;
+		std::cout << "————————————————————————————————————————————" << '\n';
+		std::cout << "     INDEX|   F. NAME|   L. NAME|  NICKNAME|" << '\n';
+		std::cout << "————————————————————————————————————————————" << '\n';
 		i = -1;
 		while (++i < max)
 		{
@@ -74,10 +74,10 @@ void	Phonebook::search(void) const
 			std::cout << std::setw(10) << trunc(this->_list[i].get_fn()) << "|";
 			std::cout << std::setw(10) << trunc(this->_list[i].get_ln()) << "|";
 			std::cout << std::setw(10) << trunc(this->_list[i].get_n()) << "|";
-			std::cout << std::endl;
-			std::cout << "————————————————————————————————————————————" << std::endl;
+			std::cout << '\n';
+			std::cout << "————————————————————————————————————————————" << '\n';
 		}
-		std::cout << std::endl << "Enter contact index (1 - ";
+		std::cout << '\n' << "Enter contact index (1 - ";
 		std::cout << max << "): ";
 		std::getline(std::cin >> std::ws, str);
 		if (std::cin.eof() || std::cin.fail())
@@ -85,13 +85,13 @@ void	Phonebook::search(void) const
 	}
 	j = str.c_str()[0] - '0' - 1;
 	clear();
-	std::cout << "Contact " << j + 1 << std::endl;
-	std::cout << "————————————————————————————————————————————" << std::endl;
-	std::cout << "First name:     " << this->_list[j].get_fn() << std::endl;
-	std::cout << "Last name:      " << this->_list[j].get_ln() << std::endl;
-	std::cout << "Nickname:       " << this->_list[j].get_n() << std::endl;
-	std::cout << "Phone number:   " << this->_list[j].get_pn() << std::endl;
-	std::cout << "Darkest secret: " << this->_list[j].get_ds() << std::endl;
+	std::cout << "Contact " << j + 1 << '\n';
+	std::cout << "————————————————————————————————————————————" << '\n';
+	std::cout << "First name:     " << this->_list[j].get_fn() << '\n';
+	std::cout << "Last name:      " << this->_list[j].get_ln() << '\n';
+	std::cout << "Nickname:       " << this->_list[j].get_n() << '\n';
+	std::cout << "Phone number:   " << this->_list[j].get_pn() << '\n';
+	std::cout << "Darkest secret: " << this->_list[j].get_ds() << '\n';
 	pause();
 	return ;
 }
@@ -114,8 +114,8 @@ std::string	add_prompt(std::string s)
 	while (str.empty())
 	{
 		clear();
-		std::cout << "Adding a new contact (fields can not be empty)" << std::endl;
-		std::cout << std::endl << s;
+		std::cout << "Adding a new contact (fields can not be empty)" << '\n';
+		std::cout << '\n' << s;
 		std::getline(std::cin >> std::ws, str);
 		if (std::cin.eof() || std::cin.fail())
 			exit (1);
@@ -123,10 +123,10 @@ std::string	add_prompt(std::string s)
 	return (str);
 }
 
-void	pause(void)
+void	pause()
 {
-	std::cout << std::endl;
-	std::cout << "Press ENTER to continue" << std::endl;
+	std::cout << '\n';
+	std::cout << "Press ENTER to continue" << '\n';
 	while (42)
 	{
 		if (std::cin.get())
@@ -134,9 +134,9 @@ void	pause(void)
 	}
 }
 
-void	clear(void)
+void	clear()
 {
 	system("clear");
-	std::cout << "PhoneBook" << std::endl;
-	std::cout << std::endl;
+	std::cout << "PhoneBook" << '\n';
+	std::cout << '\n';
 }

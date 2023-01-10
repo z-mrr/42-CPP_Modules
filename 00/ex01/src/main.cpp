@@ -6,7 +6,7 @@
 /*   By: jdias-mo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/03 21:41:45 by jdias-mo          #+#    #+#             */
-/*   Updated: 2023/01/09 19:17:56 by jdias-mo         ###   ########.fr       */
+/*   Updated: 2023/01/10 12:05:44 by jdias-mo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 #include <string>
 #include <iostream>
 
-int	main(void)
+int	main()
 {
 	Phonebook	phonebook;
 	std::string	cmd;
@@ -22,10 +22,10 @@ int	main(void)
 	while (cmd != "EXIT" && !std::cin.eof() && !std::cin.fail())
 	{
 		clear();
-		std::cout << "• ADD" << std::endl;
-		std::cout << "• SEARCH" << std::endl;
-		std::cout << "• EXIT" << std::endl;
-		std::cout << std::endl;
+		std::cout << "• ADD" << '\n';
+		std::cout << "• SEARCH" << '\n';
+		std::cout << "• EXIT" << '\n';
+		std::cout << '\n';
 		std::cout << "Enter a command: ";
 		std::getline(std::cin, cmd);
 		if (cmd == "ADD")
