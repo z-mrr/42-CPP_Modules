@@ -6,7 +6,7 @@
 /*   By: jdias-mo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/03 21:42:55 by jdias-mo          #+#    #+#             */
-/*   Updated: 2023/01/10 14:24:30 by jdias-mo         ###   ########.fr       */
+/*   Updated: 2023/01/10 15:27:10 by jdias-mo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,10 +47,9 @@ void	Phonebook::add()
 
 void	Phonebook::search() const
 {
-	int	i;
-	int	j;
-	int	max;
-
+	int			i;
+	int			j;
+	int			max;
 	std::string	str;
 
 	clear();
@@ -61,7 +60,7 @@ void	Phonebook::search() const
 		pause();
 		return ;
 	}
-	while ((str.length() != 1 || str.c_str()[0] <= '0' || str.c_str()[0] - '0' > max))
+	while (str.length() != 1 || str[0] <= '0' || str[0] - '0' > max)
 	{
 		clear();
 		std::cout << "————————————————————————————————————————————" << '\n';
@@ -79,11 +78,11 @@ void	Phonebook::search() const
 		}
 		std::cout << '\n' << "Enter contact index (1 - ";
 		std::cout << max << "): ";
-		std::getline(std::cin >> std::ws, str);
+		std::getline(std::cin, str);
 		if (std::cin.eof() || std::cin.fail())
 			exit (1);
 	}
-	j = str.c_str()[0] - '0' - 1;
+	j = str[0] - '0' - 1;
 	clear();
 	std::cout << "Contact " << j + 1 << '\n';
 	std::cout << "————————————————————————————————————————————" << '\n';
@@ -98,7 +97,6 @@ void	Phonebook::search() const
 
 std::string	trunc(std::string s)
 {
-
 	if (s.length() > 10)
 	{
 		s = s.substr(0, 9);
@@ -111,16 +109,26 @@ std::string	add_prompt(std::string s)
 {
 	std::string	str;
 
-	while (str.empty())
+	while (str.empty() || ft_isspace(str))
 	{
 		clear();
 		std::cout << "Adding a new contact (fields can not be empty)" << '\n';
 		std::cout << '\n' << s;
-		std::getline(std::cin >> std::ws, str);
+		std::getline(std::cin, str);
 		if (std::cin.eof() || std::cin.fail())
 			exit (1);
 	}
 	return (str);
+}
+
+bool	ft_isspace(std::string s)
+{
+	for(unsigned int i = 0; i < s.length(); i++)
+	{
+		if(!std::isspace(s[i]))
+			return false;
+	}
+	return true;
 }
 
 void	pause()

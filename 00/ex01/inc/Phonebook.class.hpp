@@ -6,7 +6,7 @@
 /*   By: jdias-mo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/03 21:42:52 by jdias-mo          #+#    #+#             */
-/*   Updated: 2023/01/10 12:02:51 by jdias-mo         ###   ########.fr       */
+/*   Updated: 2023/01/10 15:17:31 by jdias-mo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,6 +38,7 @@ private:
 
 std::string	trunc(std::string s);
 std::string	add_prompt(std::string s);
+bool		ft_isspace(std::string s);
 void		pause();
 void		clear();
 
