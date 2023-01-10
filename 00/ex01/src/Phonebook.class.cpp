@@ -6,7 +6,7 @@
 /*   By: jdias-mo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/03 21:42:55 by jdias-mo          #+#    #+#             */
-/*   Updated: 2023/01/10 16:05:37 by jdias-mo         ###   ########.fr       */
+/*   Updated: 2023/01/10 17:39:04 by jdias-mo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -97,7 +97,7 @@ void	Phonebook::search() const
 
 std::string	trunc(std::string s)
 {
-	for (unsigned int i = 0; i < s.length(); i++)//para nao desformatar a tab
+	for (int i = 0; i < static_cast<int>(s.length()); i++)//para nao desformatar a tab
 	{
 		if (s[i] == '\t')
 			s[i] = ' ';
@@ -128,7 +128,7 @@ std::string	add_prompt(std::string s)
 
 std::string	ft_trim_ws(std::string s)
 {
-	unsigned int i = 0;
+	int i = 0;
 
 	while (s[i] == ' ' || s[i] == '\t')
 		i++;
@@ -137,7 +137,7 @@ std::string	ft_trim_ws(std::string s)
 
 bool	ft_isspace(std::string s)
 {
-	for(unsigned int i = 0; i < s.length(); i++)
+	for(int i = 0; i < static_cast<int>(s.length()); i++)
 	{
 		if(!std::isspace(s[i]))
 			return false;
