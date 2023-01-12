@@ -6,7 +6,7 @@
 /*   By: jdias-mo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/03 21:42:55 by jdias-mo          #+#    #+#             */
-/*   Updated: 2023/01/10 17:39:04 by jdias-mo         ###   ########.fr       */
+/*   Updated: 2023/01/12 18:31:49 by jdias-mo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,17 +28,17 @@ void	Phonebook::add()
 {
 	int	i;
 
-	this->_i++;
-	if (this->_i == 9)
-		this->_i = 1;
-	if (this->_max < 8)
-		this->_max++;
-	i = this->_i - 1;
-	this->_list[i].set_fn(add_prompt("First name: "));
-	this->_list[i].set_ln(add_prompt("Last name: "));
-	this->_list[i].set_n(add_prompt("Nickname: "));
-	this->_list[i].set_pn(add_prompt("Phone number: "));
-	this->_list[i].set_ds(add_prompt("Darkest secret: "));
+	_i++;
+	if (_i == 9)
+		_i = 1;
+	if (_max < 8)
+		_max++;
+	i = _i - 1;
+	_list[i].set_fn(add_prompt("First name: "));
+	_list[i].set_ln(add_prompt("Last name: "));
+	_list[i].set_n(add_prompt("Nickname: "));
+	_list[i].set_pn(add_prompt("Phone number: "));
+	_list[i].set_ds(add_prompt("Darkest secret: "));
 	clear();
 	std::cout << "Contact successfully added to PhoneBook" << '\n';
 	pause();
@@ -49,48 +49,45 @@ void	Phonebook::search() const
 {
 	int			i;
 	int			j;
-	int			max;
 	std::string	str;
 
 	clear();
-	max = this->_max;
-	if (!max)
+	if (!_max)
 	{
 		std::cout << "You do not have any contacts yet" << '\n';
 		pause();
 		return ;
 	}
-	while (str.length() != 1 || str[0] <= '0' || str[0] - '0' > max)
+	while (str.length() != 1 || str[0] <= '0' || str[0] - '0' > _max)
 	{
 		clear();
 		std::cout << "————————————————————————————————————————————" << '\n';
 		std::cout << "     INDEX|   F. NAME|   L. NAME|  NICKNAME|" << '\n';
 		std::cout << "————————————————————————————————————————————" << '\n';
 		i = -1;
-		while (++i < max)
+		while (++i < _max)
 		{
 			std::cout << std::setw(10) << i + 1 << "|";
-			std::cout << std::setw(10) << trunc(this->_list[i].get_fn()) << "|";
-			std::cout << std::setw(10) << trunc(this->_list[i].get_ln()) << "|";
-			std::cout << std::setw(10) << trunc(this->_list[i].get_n()) << "|";
+			std::cout << std::setw(10) << trunc(_list[i].get_fn()) << "|";
+			std::cout << std::setw(10) << trunc(_list[i].get_ln()) << "|";
+			std::cout << std::setw(10) << trunc(_list[i].get_n()) << "|";
 			std::cout << '\n';
 			std::cout << "————————————————————————————————————————————" << '\n';
 		}
 		std::cout << '\n' << "Enter contact index (1 - ";
-		std::cout << max << "): ";
+		std::cout << _max << "): ";
 		std::getline(std::cin, str);
 		if (std::cin.eof() || std::cin.fail())
 			exit (1);
 	}
 	j = str[0] - '0' - 1;
 	clear();
-	std::cout << "Contact " << j + 1 << '\n';
-	std::cout << "————————————————————————————————————————————" << '\n';
-	std::cout << "First name:     " << this->_list[j].get_fn() << '\n';
-	std::cout << "Last name:      " << this->_list[j].get_ln() << '\n';
-	std::cout << "Nickname:       " << this->_list[j].get_n() << '\n';
-	std::cout << "Phone number:   " << this->_list[j].get_pn() << '\n';
-	std::cout << "Darkest secret: " << this->_list[j].get_ds() << '\n';
+	std::cout << "Contact " << j + 1 << '\n' << '\n';
+	std::cout << "First name:     " << _list[j].get_fn() << '\n';
+	std::cout << "Last name:      " << _list[j].get_ln() << '\n';
+	std::cout << "Nickname:       " << _list[j].get_n() << '\n';
+	std::cout << "Phone number:   " << _list[j].get_pn() << '\n';
+	std::cout << "Darkest secret: " << _list[j].get_ds() << '\n';
 	pause();
 	return ;
 }
@@ -159,6 +156,8 @@ void	pause()
 void	clear()
 {
 	system("clear");
-	std::cout << "PhoneBook" << '\n';
+	std::cout << " ———————————" << '\n';
+	std::cout << "| PhoneBook |" << '\n';
+	std::cout << " ———————————" << '\n';
 	std::cout << '\n';
 }
