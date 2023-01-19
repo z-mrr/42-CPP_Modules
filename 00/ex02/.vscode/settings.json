@@ -1,11 +1,11 @@
 {
 	"files.associations": {
-		"cctype": "cpp",
-		"ostream": "cpp",
+		"iostream": "cpp",
 		"array": "cpp",
 		"atomic": "cpp",
 		"bit": "cpp",
 		"*.tcc": "cpp",
+		"cctype": "cpp",
 		"clocale": "cpp",
 		"cmath": "cpp",
 		"cstdarg": "cpp",
@@ -36,16 +36,13 @@
 		"fstream": "cpp",
 		"initializer_list": "cpp",
 		"iosfwd": "cpp",
-		"iostream": "cpp",
 		"istream": "cpp",
 		"limits": "cpp",
 		"new": "cpp",
+		"ostream": "cpp",
 		"sstream": "cpp",
 		"stdexcept": "cpp",
 		"streambuf": "cpp",
-		"typeinfo": "cpp",
-		"iomanip": "cpp",
-		"ctime": "cpp"
-	},
-	"C_Cpp.default.configurationProvider": "ms-vscode.makefile-tools"
+		"typeinfo": "cpp"
+	}
 }

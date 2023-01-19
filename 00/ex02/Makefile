@@ -6,11 +6,11 @@
 #    By: jdias-mo <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/01/02 14:49:04 by jdias-mo          #+#    #+#              #
-#    Updated: 2023/01/05 12:14:21 by jdias-mo         ###   ########.fr        #
+#    Updated: 2023/01/19 12:48:36 by jdias-mo         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME =			tests
+NAME =			GlobalBankstersUnited
 
 SRC =			$(addsuffix .cpp,	tests \
 									Account)
