@@ -6,7 +6,7 @@
 /*   By: jdias-mo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/20 11:40:06 by jdias-mo          #+#    #+#             */
-/*   Updated: 2023/01/20 11:46:41 by jdias-mo         ###   ########.fr       */
+/*   Updated: 2023/01/20 18:07:26 by jdias-mo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,10 +19,13 @@ class Zombie
 {
 public:
 
-	Zombie();
+	Zombie(std::string name);
 	~Zombie();
 
-	void	announce();
+	void		announce();
+	std::string	getName();
+	Zombie*		newZombie(std::string name);
+	void		randomChump(std::string name);
 
 private:
 
