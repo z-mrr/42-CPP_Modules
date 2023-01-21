@@ -11,6 +11,8 @@
 /* ************************************************************************** */
 
 #include <Zombie.hpp>
+#include <string>
+#include <new>
 
 Zombie*	newZombombie(std::string name)
 {
