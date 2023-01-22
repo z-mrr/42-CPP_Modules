@@ -6,7 +6,7 @@
 /*   By: jdias-mo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/20 11:40:06 by jdias-mo          #+#    #+#             */
-/*   Updated: 2023/01/22 09:43:42 by jdias-mo         ###   ########.fr       */
+/*   Updated: 2023/01/22 10:28:09 by jdias-mo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,14 +19,10 @@ class Zombie
 {
 public:
 	Zombie();
-	// Zombie(std::string name);
 	~Zombie();
 	void				announce();
 
-	static std::string	defaultName;
-
-private:
-	std::string			_name;
+	static std::string	name;
 };
 
 Zombie*					zombieHorde(int N, std::string name);
