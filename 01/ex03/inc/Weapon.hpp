@@ -6,7 +6,7 @@
 /*   By: jdias-mo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/22 12:15:00 by jdias-mo          #+#    #+#             */
-/*   Updated: 2023/01/22 12:20:37 by jdias-mo         ###   ########.fr       */
+/*   Updated: 2023/01/22 20:28:28 by jdias-mo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,11 +18,13 @@
 class Weapon
 {
 public:
-	std::string*	getType() const;
-	void			setType(std::string newType);
+	Weapon(std::string type);
+	~Weapon();
+	std::string	getType() const;
+	void		setType(std::string newType);
 
 private:
-	std::string	_type;
+	std::string			_type;
 };
 
 #endif
