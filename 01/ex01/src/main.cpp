@@ -6,13 +6,12 @@
 /*   By: jdias-mo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/20 17:57:25 by jdias-mo          #+#    #+#             */
-/*   Updated: 2023/01/22 10:35:35 by jdias-mo         ###   ########.fr       */
+/*   Updated: 2023/01/22 10:38:05 by jdias-mo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Zombie.hpp"
 #include <new>
-#include <iostream>
 
 int	main()
 {
@@ -22,4 +21,3 @@ int	main()
 	delete[] zombie;
 	return 0;
 }
-
