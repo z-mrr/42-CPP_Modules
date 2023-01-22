@@ -6,7 +6,7 @@
 /*   By: jdias-mo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/22 12:15:41 by jdias-mo          #+#    #+#             */
-/*   Updated: 2023/01/22 20:32:47 by jdias-mo         ###   ########.fr       */
+/*   Updated: 2023/01/22 20:47:20 by jdias-mo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ Weapon::Weapon(std::string type) : _type(type)
 Weapon::~Weapon()
 {}
 
-std::string	Weapon::getType() const
+std::string	const&	Weapon::getType() const
 {
 	return _type;
 }
