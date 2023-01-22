@@ -6,11 +6,11 @@
 #    By: jdias-mo <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/01/02 14:49:04 by jdias-mo          #+#    #+#              #
-#    Updated: 2023/01/22 07:23:18 by jdias-mo         ###   ########.fr        #
+#    Updated: 2023/01/22 09:52:38 by split            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME =			brainz
+NAME =			zombie	
 
 SRC =			$(addsuffix .cpp,	main \
 									newZombie \

@@ -6,7 +6,7 @@
 /*   By: jdias-mo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/20 17:57:25 by jdias-mo          #+#    #+#             */
-/*   Updated: 2023/01/22 07:55:03 by jdias-mo         ###   ########.fr       */
+/*   Updated: 2023/01/22 09:51:25 by jdias-mo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,10 @@
 
 int	main()
 {
+	Zombie*	zombie;
 
+	zombie = zombieHorde(3, "");
+	delete[] zombie;
 	return 0;
 }
 
