@@ -14,7 +14,7 @@
 #include <string>
 #include <new>
 
-Zombie*	newZombombie(std::string name)
+Zombie*	newZombie(std::string name)
 {
 	Zombie*	newZomb = new Zombie(name);
 
