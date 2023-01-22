@@ -5,19 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: jdias-mo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/01/20 17:57:25 by jdias-mo          #+#    #+#             */
-/*   Updated: 2023/01/22 11:53:39 by jdias-mo         ###   ########.fr       */
+/*   Created: 2023/01/22 12:15:04 by jdias-mo          #+#    #+#             */
+/*   Updated: 2023/01/22 12:15:05 by jdias-mo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Zombie.hpp"
-#include <new>
-
-int	main()
-{
-	Zombie*	zombie;
-
-	zombie = zombieHorde(3, "	");
-	delete[] zombie;
-	return 0;
-}

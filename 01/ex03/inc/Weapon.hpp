@@ -1,23 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Weapon.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jdias-mo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/01/20 17:57:25 by jdias-mo          #+#    #+#             */
-/*   Updated: 2023/01/22 11:53:39 by jdias-mo         ###   ########.fr       */
+/*   Created: 2023/01/22 12:15:00 by jdias-mo          #+#    #+#             */
+/*   Updated: 2023/01/22 12:19:43 by jdias-mo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Zombie.hpp"
-#include <new>
+#ifndef WEAPON_HPP
+#define WEAPON_HPP
 
-int	main()
+#include <string>
+
+class Weapon
 {
-	Zombie*	zombie;
+public:
+	std::string*	getType() const;
+	void			seetType(std::string newType);
 
-	zombie = zombieHorde(3, "	");
-	delete[] zombie;
-	return 0;
-}
+private:
+	std::string	_type;
+};
+
+#endif
