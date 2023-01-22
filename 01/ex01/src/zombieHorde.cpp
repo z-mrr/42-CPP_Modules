@@ -1,30 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Zombie.cpp                                         :+:      :+:    :+:   */
+/*   zombieHorde.cpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jdias-mo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/01/20 11:40:31 by jdias-mo          #+#    #+#             */
-/*   Updated: 2023/01/22 07:53:44 by jdias-mo         ###   ########.fr       */
+/*   Created: 2023/01/22 07:32:05 by jdias-mo          #+#    #+#             */
+/*   Updated: 2023/01/22 07:32:06 by jdias-mo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Zombie.hpp"
-#include <string>
-#include <iostream>
-
-Zombie::Zombie(std::string name) : _name(name)
-{
-	// std::cout << "Spawning " << _name << '\n';
-}
-
-Zombie::~Zombie()
-{
-	std::cout << "Killing " << _name << '\n';
-}
-
-void	Zombie::announce()
-{
-	std::cout << getName() << ": BraiiiiiiinnnzzzZ...\n";
-}

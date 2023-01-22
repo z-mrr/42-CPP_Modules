@@ -1,30 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Zombie.cpp                                         :+:      :+:    :+:   */
+/*   Zombie.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jdias-mo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/01/20 11:40:31 by jdias-mo          #+#    #+#             */
-/*   Updated: 2023/01/22 07:53:44 by jdias-mo         ###   ########.fr       */
+/*   Created: 2023/01/20 11:40:06 by jdias-mo          #+#    #+#             */
+/*   Updated: 2023/01/22 07:52:53 by jdias-mo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Zombie.hpp"
+#ifndef ZOMBIE_HPP
+#define ZOMBIE_HPP
+
 #include <string>
-#include <iostream>
 
-Zombie::Zombie(std::string name) : _name(name)
+class Zombie
 {
-	// std::cout << "Spawning " << _name << '\n';
-}
+public:
+	Zombie(std::string name);
+	~Zombie();
 
-Zombie::~Zombie()
-{
-	std::cout << "Killing " << _name << '\n';
-}
+	void		announce();
+	std::string	getName();
 
-void	Zombie::announce()
-{
-	std::cout << getName() << ": BraiiiiiiinnnzzzZ...\n";
-}
+private:
+	std::string	_name;
+};
+
+Zombie*		newZombie(std::string name);
+void		randomChump(std::string name);
+
+#endif

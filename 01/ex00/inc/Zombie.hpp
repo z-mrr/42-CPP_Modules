@@ -6,7 +6,7 @@
 /*   By: jdias-mo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/20 11:40:06 by jdias-mo          #+#    #+#             */
-/*   Updated: 2023/01/22 07:19:11 by jdias-mo         ###   ########.fr       */
+/*   Updated: 2023/01/22 07:53:51 by jdias-mo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,6 @@ public:
 	~Zombie();
 
 	void		announce();
-	std::string	getName();
 
 private:
 	std::string	_name;

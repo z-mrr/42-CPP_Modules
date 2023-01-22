@@ -1,30 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Zombie.cpp                                         :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jdias-mo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/01/20 11:40:31 by jdias-mo          #+#    #+#             */
-/*   Updated: 2023/01/22 07:53:44 by jdias-mo         ###   ########.fr       */
+/*   Created: 2023/01/20 17:57:25 by jdias-mo          #+#    #+#             */
+/*   Updated: 2023/01/22 07:25:58 by jdias-mo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Zombie.hpp"
-#include <string>
-#include <iostream>
+#include <new>
 
-Zombie::Zombie(std::string name) : _name(name)
+int	main()
 {
-	// std::cout << "Spawning " << _name << '\n';
+	Zombie	zombie("Matias");
+	Zombie*	newZomb;
+
+	newZomb = newZombie("Tone");
+	zombie.announce();
+	newZomb->announce();
+	randomChump("Arnaldo");
+	delete newZomb;
+	return 0;
 }
 
-Zombie::~Zombie()
-{
-	std::cout << "Killing " << _name << '\n';
-}
-
-void	Zombie::announce()
-{
-	std::cout << getName() << ": BraiiiiiiinnnzzzZ...\n";
-}
