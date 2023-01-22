@@ -6,7 +6,7 @@
 /*   By: jdias-mo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/21 11:58:05 by jdias-mo          #+#    #+#             */
-/*   Updated: 2023/01/22 07:20:00 by jdias-mo         ###   ########.fr       */
+/*   Updated: 2023/01/22 07:59:32 by jdias-mo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,8 +15,8 @@
 
 void	randomChump(std::string name)
 {
-	Zombie	newZomb(name);
+	Zombie	zombie(name);
 
-	newZomb.announce();
+	zombie.announce();
 }
 

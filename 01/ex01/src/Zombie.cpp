@@ -6,7 +6,7 @@
 /*   By: jdias-mo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/20 11:40:31 by jdias-mo          #+#    #+#             */
-/*   Updated: 2023/01/22 07:28:06 by jdias-mo         ###   ########.fr       */
+/*   Updated: 2023/01/22 07:55:12 by jdias-mo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 
 Zombie::Zombie(std::string name) : _name(name)
 {
-	// std::cout << "Spawning " << _name << '\n';
+	std::cout << "Spawning " << _name << '\n';
 }
 
 Zombie::~Zombie()
