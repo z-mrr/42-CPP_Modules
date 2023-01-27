@@ -6,11 +6,11 @@
 #    By: jdias-mo <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/01/02 14:49:04 by jdias-mo          #+#    #+#              #
-#    Updated: 2023/01/27 20:55:35 by split            ###   ########.fr        #
+#    Updated: 2023/01/27 22:00:44 by jdias-mo         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME =			harl
+NAME =			harlFilter
 
 SRC =			$(addsuffix .cpp,	main \
 									Harl)

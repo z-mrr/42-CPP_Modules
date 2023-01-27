@@ -6,19 +6,21 @@
 /*   By: jdias-mo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/27 16:58:33 by jdias-mo          #+#    #+#             */
-/*   Updated: 2023/01/27 21:00:20 by jdias-mo         ###   ########.fr       */
+/*   Updated: 2023/01/27 22:00:38 by jdias-mo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Harl.hpp"
+#include <iostream>
+#include <string>
 
-int	main()
+int	main(int ac, char **av)
 {
-	Harl	h;
+	Harl		h;
+	std::string	level(av[1]);
 
-	h.complain("DEBUG");
-	h.complain("INFO");
-	h.complain("WARNING");
-	h.complain("ERROR");
+	if (ac != 2)
+		return std::cout << "Usage: ./harlFilter <level>\n", 1;
+	h.complain(level);
 	return 0;
 }

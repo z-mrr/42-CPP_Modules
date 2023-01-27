@@ -1,24 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Harl.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jdias-mo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/01/27 16:58:33 by jdias-mo          #+#    #+#             */
-/*   Updated: 2023/01/27 21:00:20 by jdias-mo         ###   ########.fr       */
+/*   Created: 2023/01/27 17:03:45 by jdias-mo          #+#    #+#             */
+/*   Updated: 2023/01/27 20:10:08 by jdias-mo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Harl.hpp"
+#ifndef HARL_HPP
+#define HARL_HPP
 
-int	main()
+#include <string>
+
+using std::string;
+
+class Harl
 {
-	Harl	h;
+public:
+	Harl();
+	~Harl();
+	void	complain(string level);
 
-	h.complain("DEBUG");
-	h.complain("INFO");
-	h.complain("WARNING");
-	h.complain("ERROR");
-	return 0;
-}
+private:
+	void	debug();
+	void	info();
+	void	warning();
+	void	error();
+};
+
+#endif
