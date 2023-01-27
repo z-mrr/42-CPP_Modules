@@ -6,13 +6,14 @@
 #    By: jdias-mo <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/01/02 14:49:04 by jdias-mo          #+#    #+#              #
-#    Updated: 2023/01/27 14:57:56 by jdias-mo         ###   ########.fr        #
+#    Updated: 2023/01/27 20:33:33 by jdias-mo         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME =			Harl
 
-SRC =			$(addsuffix .cpp,	main)
+SRC =			$(addsuffix .cpp,	main \
+									Harl)
 
 INC_DIR =		inc/
 

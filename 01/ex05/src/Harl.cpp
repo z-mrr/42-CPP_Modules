@@ -6,12 +6,11 @@
 /*   By: jdias-mo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/27 18:06:31 by jdias-mo          #+#    #+#             */
-/*   Updated: 2023/01/27 18:24:54 by jdias-mo         ###   ########.fr       */
+/*   Updated: 2023/01/27 20:52:27 by jdias-mo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Harl.hpp"
-
 #include <string>
 #include <iostream>
 
@@ -45,5 +44,12 @@ void	Harl::error()
 
 void	Harl::complain(std::string level)
 {
+	void	(Harl::*f[4])() = {&Harl::debug, &Harl::info, &Harl::warning, &Harl::error};
+	string	lvl[4] = {"DEBUG", "INFO", "WARNING", "ERROR"};
 
+	for (int i = 0; i < 4; i++)
+	{
+		if (lvl[i] == level)
+			(this->*f[i])();
+	}
 }
