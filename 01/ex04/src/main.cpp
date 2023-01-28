@@ -6,7 +6,7 @@
 /*   By: jdias-mo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/22 20:55:18 by jdias-mo          #+#    #+#             */
-/*   Updated: 2023/01/27 14:16:04 by jdias-mo         ###   ########.fr       */
+/*   Updated: 2023/01/28 13:31:58 by jdias-mo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,9 +60,9 @@ int	main(int ac, char **av)
 	{
 		newContent = oldContent.substr(0, index);
 		newContent.append(s2);
-		newContent.append(oldContent.substr(index + s2.length(), oldContent.length()));
+		newContent.append(oldContent.substr(index + s1.length(), oldContent.length()));
 		oldContent = newContent;
-		index = oldContent.find(s1);
+		index = oldContent.find(s1, index + s2.length());
 	}
 	ofs << newContent;
 	ifs.close();
