@@ -6,7 +6,7 @@
 /*   By: jdias-mo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/20 11:40:31 by jdias-mo          #+#    #+#             */
-/*   Updated: 2023/01/22 10:38:17 by jdias-mo         ###   ########.fr       */
+/*   Updated: 2023/01/28 18:57:30 by jdias-mo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,15 +14,20 @@
 #include <string>
 #include <iostream>
 
-Zombie::Zombie()
+Zombie::Zombie() : _name("Zombie")
 {}
 
 Zombie::~Zombie()
-{}
+{
+	std::cout << "Destructing " << _name << '\n';
+}
+
+void	Zombie::setName(std::string name)
+{
+	_name = name;
+}
 
 void	Zombie::announce()
 {
-	std::cout << name << ": BraiiiiiiinnnzzzZ...\n";
+	std::cout << _name << ": BraiiiiiiinnnzzzZ...\n";
 }
-
-std::string	Zombie::name = "Zombie";
