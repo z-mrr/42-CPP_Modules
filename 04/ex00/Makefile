@@ -1,8 +1,11 @@
 NAME =			ex00
 
 SRC =			$(addsuffix .cpp,	main \
-									dog \
-									cat)
+									Animal \
+									Dog \
+									Cat\
+									WrongAnimal \
+									WrongCat)
 
 INC_DIR =		inc/
 

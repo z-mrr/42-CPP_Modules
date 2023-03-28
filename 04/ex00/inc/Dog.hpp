@@ -1,14 +1,18 @@
 #ifndef DOG_HPP
 #define DOG_HPP
 
-class Dog
+#include "Animal.hpp"
+
+class Dog : public Animal
 {
 public:
 	Dog();
 	Dog(const Dog &ref);
 	~Dog();
 
-	void	makeSound();
+	Dog&		operator=(const Dog& ref);
+
+	virtual void	makeSound() const;
 };
 
 #endif
