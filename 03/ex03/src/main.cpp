@@ -5,23 +5,32 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: jdias-mo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/01/31 10:47:38 by jdias-mo          #+#    #+#             */
-/*   Updated: 2023/03/09 16:40:43 by jdias-mo         ###   ########.fr       */
+/*   Created: 2023/03/17 16:01:29 by jdias-mo          #+#    #+#             */
+/*   Updated: 2023/03/22 21:22:51 by jdias-mo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Fixed.hpp"
-#include <iostream>
+#include "DiamondTrap.hpp"
 
-int main( void )
+int	main()
 {
-	Fixed a;
-	Fixed b( a );
-	Fixed c;
-
-	c = b;
-	std::cout << a.getRawBits() << std::endl;
-	std::cout << b.getRawBits() << std::endl;
-	std::cout << c.getRawBits() << std::endl;
+	DiamondTrap	a;
+	std::cout << '\n';
+	DiamondTrap	b("Neiva");
+	std::cout << '\n';
+	DiamondTrap	c(b);
+	std::cout << '\n';
+	b.whoAmI();
+	a.attack("Neiva");
+	b.takeDamage(30);
+	b.beRepaired(10);
+	std::cout << '\n';
+	a.status();
+	b.status();
+	c.status();
+	c = a;
+	c.status();
+	std::cout << '\n';
 	return 0;
 }
+

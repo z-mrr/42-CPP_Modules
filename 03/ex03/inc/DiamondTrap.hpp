@@ -1,27 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   DiamondTrap.hpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jdias-mo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/01/31 10:47:38 by jdias-mo          #+#    #+#             */
-/*   Updated: 2023/03/09 16:40:43 by jdias-mo         ###   ########.fr       */
+/*   Created: 2023/03/21 19:55:21 by jdias-mo          #+#    #+#             */
+/*   Updated: 2023/03/22 20:35:14 by jdias-mo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Fixed.hpp"
+#include "ScavTrap.hpp"
+#include "FragTrap.hpp"
 #include <iostream>
 
-int main( void )
+class DiamondTrap : public ScavTrap, public FragTrap
 {
-	Fixed a;
-	Fixed b( a );
-	Fixed c;
+public:
+	DiamondTrap();
+	DiamondTrap(DiamondTrap const& src);
+	DiamondTrap(std::string name);
+	~DiamondTrap();
 
-	c = b;
-	std::cout << a.getRawBits() << std::endl;
-	std::cout << b.getRawBits() << std::endl;
-	std::cout << c.getRawBits() << std::endl;
-	return 0;
-}
+	DiamondTrap&	operator=(DiamondTrap const& ref);
+
+	void			attack(std::string const& target);
+	void			whoAmI();
+		void		status();
+
+private:
+	std::string	_name;
+};

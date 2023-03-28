@@ -1,27 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Point.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jdias-mo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/01/31 10:47:38 by jdias-mo          #+#    #+#             */
-/*   Updated: 2023/03/09 16:40:43 by jdias-mo         ###   ########.fr       */
+/*   Created: 2023/03/16 11:46:59 by jdias-mo          #+#    #+#             */
+/*   Updated: 2023/03/16 15:43:27 by jdias-mo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#ifndef POINT_HPP
+#define POINT_HPP
+
 #include "Fixed.hpp"
-#include <iostream>
 
-int main( void )
+class Point
 {
-	Fixed a;
-	Fixed b( a );
-	Fixed c;
+public:
+	Point();
+	Point(Point const &src);
+	Point(float const a, float const b);
+	~Point();
 
-	c = b;
-	std::cout << a.getRawBits() << std::endl;
-	std::cout << b.getRawBits() << std::endl;
-	std::cout << c.getRawBits() << std::endl;
-	return 0;
-}
+	Point const&	operator=(Point const& ref) const;
+
+	Fixed	getX() const;
+	Fixed	getY() const;
+
+private:
+	Fixed const	_x;
+	Fixed const	_y;
+};
+
+bool	bsp(Point const a, Point const b, Point const c, Point const point);
+
+#endif

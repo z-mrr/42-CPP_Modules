@@ -6,38 +6,19 @@
 /*   By: jdias-mo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/31 10:47:39 by jdias-mo          #+#    #+#             */
-/*   Updated: 2023/01/31 11:55:42 by jdias-mo         ###   ########.fr       */
+/*   Updated: 2023/03/09 17:14:42 by jdias-mo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Fixed.hpp"
-#include <iostream>
 
 using std::cout;
+
+//________________CONSTRUCTORS________________
 
 Fixed::Fixed() : _nValue(0)
 {
 	cout << "Default constructor called\n";
-}
-
-Fixed::Fixed(const int d)
-{
-	cout << "Int constructor called\n";
-}
-
-Fixed::Fixed(const float f)
-{
-	cout << "Float constructor called\n";
-}
-
-float	Fixed::toFloat() const
-{
-	return;
-}
-
-int	Fixed::toInt() const
-{
-	return;
 }
 
 Fixed::Fixed(Fixed const &src)
@@ -46,10 +27,26 @@ Fixed::Fixed(Fixed const &src)
 	*this = src;
 }
 
+Fixed::Fixed(const int i)
+{
+	cout << "Int constructor called\n";
+	 _nValue = i * (1 << _nBits);
+}
+
+Fixed::Fixed(const float f)
+{
+	cout << "Float constructor called\n";
+	 _nValue = static_cast<int>(roundf(f * (1 << _nBits)));
+}
+
+//________________DESTRUCTOR________________
+
 Fixed::~Fixed()
 {
 	cout << "Destructor called\n";
 }
+
+//________________OPERATOR OVERLOADS________________
 
 Fixed	&Fixed::operator=(Fixed const &rhs)
 {
@@ -58,22 +55,30 @@ Fixed	&Fixed::operator=(Fixed const &rhs)
 	return *this;
 }
 
+std::ostream	&operator<<(std::ostream &o, Fixed const &rhs)
+{
+	o << rhs.toFloat();
+	return o;
+}
+
+//________________MEMBER FUNCTIONS________________
+
 int	Fixed::getRawBits() const
 {
-	cout << "getRawBits member function called\n";
 	return _nValue;
 }
 
 void	Fixed::setRawBits(int const raw)
 {
-	cout << "setRawBits member function called\n";
 	_nValue = raw;
 }
 
-std::ostream	&operator<<(std::ostream &o, Fixed const &rhs)
+float	Fixed::toFloat() const
 {
-	o << rhs.getRawBits();
-	return o;
+	return static_cast<float>(_nValue) / (1 << _nBits);
 }
 
-const int	Fixed::_nBits = 8;
+int		Fixed::toInt() const
+{
+	return _nValue / (1 << _nBits);
+}

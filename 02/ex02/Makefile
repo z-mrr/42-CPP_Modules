@@ -6,11 +6,11 @@
 #    By: jdias-mo <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/01/02 14:49:04 by jdias-mo          #+#    #+#              #
-#    Updated: 2023/03/09 16:39:41 by jdias-mo         ###   ########.fr        #
+#    Updated: 2023/03/09 17:16:30 by jdias-mo         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME =			fixed00
+NAME =			fixed02
 
 SRC =			$(addsuffix .cpp,	main \
 									Fixed)

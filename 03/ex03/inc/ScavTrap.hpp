@@ -1,27 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   ScavTrap.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jdias-mo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/01/31 10:47:38 by jdias-mo          #+#    #+#             */
-/*   Updated: 2023/03/09 16:40:43 by jdias-mo         ###   ########.fr       */
+/*   Created: 2023/03/20 18:30:08 by jdias-mo          #+#    #+#             */
+/*   Updated: 2023/03/22 20:51:21 by jdias-mo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Fixed.hpp"
+#include "ClapTrap.hpp"
 #include <iostream>
 
-int main( void )
+class ScavTrap : virtual public ClapTrap
 {
-	Fixed a;
-	Fixed b( a );
-	Fixed c;
+public:
+	ScavTrap();
+	ScavTrap(ScavTrap const& src);
+	ScavTrap(std::string name);
+	~ScavTrap();
 
-	c = b;
-	std::cout << a.getRawBits() << std::endl;
-	std::cout << b.getRawBits() << std::endl;
-	std::cout << c.getRawBits() << std::endl;
-	return 0;
-}
+	ScavTrap&	operator=(ScavTrap const& ref);
+
+	void		guardGate();
+	void		attack(std::string const& target);
+};

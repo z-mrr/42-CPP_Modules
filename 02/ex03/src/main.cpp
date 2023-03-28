@@ -6,31 +6,52 @@
 /*   By: jdias-mo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/31 10:47:38 by jdias-mo          #+#    #+#             */
-/*   Updated: 2023/03/09 17:15:22 by jdias-mo         ###   ########.fr       */
+/*   Updated: 2023/03/16 15:42:57 by jdias-mo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "Point.hpp"
 #include "Fixed.hpp"
-#include <iostream>
+#include <iomanip>
 
-int main( void ) {
+using std::cout;
+using std::cin;
 
-	Fixed a;
-	Fixed const b( 10 );
-	Fixed const c( 42.42f );
-	Fixed const d( b );
+int	main()
+{
+	float	x, y;
 
-	a = Fixed( 1234.4321f );
+	cout << "\nCoordenadas do vertice A:\n";
+	cout << "x: ";
+	cin >> x;
+	cout << "y: ";
+	cin >> y;
+	Point	verA(x,y);
 
-	std::cout << "a is " << a << std::endl;
-	std::cout << "b is " << b << std::endl;
-	std::cout << "c is " << c << std::endl;
-	std::cout << "d is " << d << std::endl;
+	cout << "\nCoordenadas do vertice B:\n";
+	cout << "x: ";
+	cin >> x;
+	cout << "y: ";
+	cin >> y;
+	Point	verB(x,y);
 
-	std::cout << "a is " << a.toInt() << " as integer" << std::endl;
-	std::cout << "b is " << b.toInt() << " as integer" << std::endl;
-	std::cout << "c is " << c.toInt() << " as integer" << std::endl;
-	std::cout << "d is " << d.toInt() << " as integer" << std::endl;
+	cout << "\nCoordenadas do vertice C:\n";
+	cout << "x: ";
+	cin >> x;
+	cout << "y: ";
+	cin >> y;
+	Point	verC(x,y);
 
+	while (1)
+	{
+		cout << "\nCoordenadas do ponto:\n";
+		cout << "x: ";
+		cin >> x;
+		cout << "y: ";
+		cin >> y;
+		Point	point(x,y);
+
+		cout << '\n' << std::boolalpha << bsp(verA, verB, verC, point) << "\n\n";
+	}
 	return 0;
 }

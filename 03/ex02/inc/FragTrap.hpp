@@ -1,27 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   FragTrap.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jdias-mo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/01/31 10:47:38 by jdias-mo          #+#    #+#             */
-/*   Updated: 2023/03/09 16:40:43 by jdias-mo         ###   ########.fr       */
+/*   Created: 2023/03/20 18:30:08 by jdias-mo          #+#    #+#             */
+/*   Updated: 2023/03/21 19:46:07 by jdias-mo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Fixed.hpp"
+#include "ClapTrap.hpp"
 #include <iostream>
 
-int main( void )
+class FragTrap : public ClapTrap
 {
-	Fixed a;
-	Fixed b( a );
-	Fixed c;
+public:
+	FragTrap();
+	FragTrap(FragTrap const& src);
+	FragTrap(std::string name);
+	~FragTrap();
 
-	c = b;
-	std::cout << a.getRawBits() << std::endl;
-	std::cout << b.getRawBits() << std::endl;
-	std::cout << c.getRawBits() << std::endl;
-	return 0;
-}
+	FragTrap&	operator=(FragTrap const& ref);
+
+	void		highFivesGuys();
+};

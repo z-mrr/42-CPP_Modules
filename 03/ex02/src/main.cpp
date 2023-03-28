@@ -5,23 +5,37 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: jdias-mo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/01/31 10:47:38 by jdias-mo          #+#    #+#             */
-/*   Updated: 2023/03/09 16:40:43 by jdias-mo         ###   ########.fr       */
+/*   Created: 2023/03/17 16:01:29 by jdias-mo          #+#    #+#             */
+/*   Updated: 2023/03/21 19:47:44 by jdias-mo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Fixed.hpp"
-#include <iostream>
+#include "ClapTrap.hpp"
+#include "ScavTrap.hpp"
+#include "FragTrap.hpp"
 
-int main( void )
+int	main()
 {
-	Fixed a;
-	Fixed b( a );
-	Fixed c;
+	FragTrap	a;
+	FragTrap	b("Spartacus");
+	FragTrap	c(b);
+	FragTrap	d("Crixus");
 
-	c = b;
-	std::cout << a.getRawBits() << std::endl;
-	std::cout << b.getRawBits() << std::endl;
-	std::cout << c.getRawBits() << std::endl;
+	b.attack("Crixus");
+	d.takeDamage(20);
+	d.beRepaired(10);
+	b.attack("Crixus");
+	d.takeDamage(20);
+	d.beRepaired(5);
+	b.attack("Crixus");
+	d.takeDamage(20);
+	b.attack("Crixus");
+	d.takeDamage(20);
+	b.attack("Crixus");
+	d.takeDamage(20);
+	b.attack("Crixus");
+	d.takeDamage(20);
+	d.highFivesGuys();
 	return 0;
 }
+

@@ -5,23 +5,36 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: jdias-mo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/01/31 10:47:38 by jdias-mo          #+#    #+#             */
-/*   Updated: 2023/03/09 16:40:43 by jdias-mo         ###   ########.fr       */
+/*   Created: 2023/03/17 16:01:29 by jdias-mo          #+#    #+#             */
+/*   Updated: 2023/03/21 19:08:33 by jdias-mo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Fixed.hpp"
-#include <iostream>
+#include "ClapTrap.hpp"
+#include "ScavTrap.hpp"
 
-int main( void )
+int	main()
 {
-	Fixed a;
-	Fixed b( a );
-	Fixed c;
+	ScavTrap	a;
+	ScavTrap	b("Spartacus");
+	ScavTrap	c(b);
+	ScavTrap	d("Crixus");
 
-	c = b;
-	std::cout << a.getRawBits() << std::endl;
-	std::cout << b.getRawBits() << std::endl;
-	std::cout << c.getRawBits() << std::endl;
+	b.attack("Crixus");
+	d.takeDamage(20);
+	d.beRepaired(10);
+	b.attack("Crixus");
+	d.takeDamage(20);
+	d.beRepaired(5);
+	b.attack("Crixus");
+	d.takeDamage(20);
+	b.attack("Crixus");
+	d.takeDamage(20);
+	b.attack("Crixus");
+	d.takeDamage(20);
+	b.attack("Crixus");
+	d.takeDamage(20);
+	d.guardGate();
 	return 0;
 }
+
