@@ -24,12 +24,12 @@ int	main()
 	std::cout << "\n\n";
 	Cat	cat;
 	cat.setIdea(0, "TEST 0\n");
-	Cat catcopy(cat);
-	std::cout << '\n';
+	Cat catCopy(cat);
+	std::cout << '\n' << cat.getType() << " | " << catCopy.getType() << '\n';
 	cat.printIdea(0);
 	cat.printIdea(1);
-	catcopy.printIdea(0);
-	catcopy.printIdea(1);
+	catCopy.printIdea(0);
+	catCopy.printIdea(1);
 	std::cout << '\n';
 	return 0;
 }
