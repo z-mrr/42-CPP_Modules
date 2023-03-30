@@ -6,7 +6,7 @@
 /*   By: jdias-mo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/21 19:55:21 by jdias-mo          #+#    #+#             */
-/*   Updated: 2023/03/22 20:35:14 by jdias-mo         ###   ########.fr       */
+/*   Updated: 2023/03/30 23:44:42 by jdias-mo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,8 +26,8 @@ public:
 
 	void			attack(std::string const& target);
 	void			whoAmI();
-		void		status();
+	void			status();
 
 private:
-	std::string	_name;
+	std::string		_name;
 };
