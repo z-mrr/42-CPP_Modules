@@ -20,7 +20,7 @@ int	main()
 	std::cout << '\n';
 
 	const WrongAnimal*	meta2 = new WrongAnimal();
-		const Animal*	j2 = new Dog();
+	const Animal*	j2 = new Dog();
 	const WrongAnimal*	i2 = new WrongCat();
 
 	std::cout << j2->getType() << " " << std::endl;

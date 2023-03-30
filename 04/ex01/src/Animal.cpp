@@ -36,3 +36,9 @@ void		Animal::makeSound() const
 {
 	std::cout << "Not sure what sound to make!\n";
 }
+
+void	Animal::printIdea(int i) const
+{
+	(void)i;
+	std::cout << "I have no idea.\n";
+}
