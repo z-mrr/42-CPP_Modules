@@ -6,12 +6,11 @@
 /*   By: jdias-mo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/20 18:30:00 by jdias-mo          #+#    #+#             */
-/*   Updated: 2023/03/22 20:51:00 by jdias-mo         ###   ########.fr       */
+/*   Updated: 2023/03/30 23:58:40 by jdias-mo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ScavTrap.hpp"
-#include <iostream>
 
 ScavTrap::ScavTrap() : ClapTrap("ScavTrap")
 {

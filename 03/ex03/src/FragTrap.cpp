@@ -6,12 +6,11 @@
 /*   By: jdias-mo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/20 18:30:00 by jdias-mo          #+#    #+#             */
-/*   Updated: 2023/03/22 21:19:30 by jdias-mo         ###   ########.fr       */
+/*   Updated: 2023/03/30 23:58:31 by jdias-mo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "FragTrap.hpp"
-#include <iostream>
 
 FragTrap::FragTrap() : ClapTrap("FragTrap")
 {

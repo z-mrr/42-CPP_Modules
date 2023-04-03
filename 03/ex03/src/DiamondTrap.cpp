@@ -6,12 +6,11 @@
 /*   By: jdias-mo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/21 19:55:18 by jdias-mo          #+#    #+#             */
-/*   Updated: 2023/03/23 15:39:29 by jdias-mo         ###   ########.fr       */
+/*   Updated: 2023/03/30 23:58:27 by jdias-mo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "DiamondTrap.hpp"
-#include <iostream>
 
 DiamondTrap::DiamondTrap() : ClapTrap("DiamondTrap"), ScavTrap(), FragTrap(), _name("DiamondTrap")
 {

@@ -6,11 +6,12 @@
 /*   By: jdias-mo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/17 16:01:29 by jdias-mo          #+#    #+#             */
-/*   Updated: 2023/03/22 21:22:51 by jdias-mo         ###   ########.fr       */
+/*   Updated: 2023/03/30 23:58:53 by jdias-mo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "DiamondTrap.hpp"
+#include <iostream>
 
 int	main()
 {

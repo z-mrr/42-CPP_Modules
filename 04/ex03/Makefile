@@ -1,12 +1,11 @@
 NAME =			ex03
 
 SRC =			$(addsuffix .cpp,	main \
-									AAnimal \
-									Dog \
-									Cat\
-									WrongAnimal \
-									WrongCat \
-									Brain)
+									AMateria \
+									Character \
+									Cure \
+									Ice \
+									MateriaSource)
 
 INC_DIR =		inc/
 

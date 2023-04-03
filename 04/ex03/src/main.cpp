@@ -1,37 +1,56 @@
-#include "AAnimal.hpp"
-#include "Dog.hpp"
-#include "Cat.hpp"
-#include "WrongAnimal.hpp"
-#include "WrongCat.hpp"
-#include <iostream>
-#include <new>
+#include "AMateria.hpp"
+#include "Cure.hpp"
+#include "Ice.hpp"
+#include "ICharacter.hpp"
+#include "Character.hpp"
+#include "IMateriaSource.hpp"
+#include "MateriaSource.hpp"
 
-int	main()
+int main()
 {
-	AAnimal*	animal[100];
+	IMateriaSource* oldsrc = new MateriaSource();
+	AMateria* test = NULL;
+	oldsrc->learnMateria(test);
+	oldsrc->learnMateria(new Ice());
+	oldsrc->learnMateria(new Cure());
+	oldsrc->learnMateria(new Ice());
+	oldsrc->learnMateria(new Cure());
+	oldsrc->learnMateria(new Cure());
 
-	for (int i = 0; i < 100; i++)
-		i % 2 ? animal[i] = new Dog : animal[i] = new Cat;
-	for (int i = 0; i < 100; i++)
-	{
-		std::cout << "(animal " << i << ") " << animal[i]->getType() << ": ";
-		animal[i]->printIdea(i);
-	}
-	std::cout << "\n\n";
-	for (int i = 0; i < 100; i++)
-		delete animal[i];
+	IMateriaSource* src = new MateriaSource(*(MateriaSource*)oldsrc);
 
-	std::cout << "\n\n";
-	Cat	cat;
-	cat.setIdea(0, "TEST 0\n");
-	Cat catCopy(cat);
-	std::cout << '\n' << cat.getType() << " | " << catCopy.getType() << '\n';
-	cat.printIdea(0);
-	cat.printIdea(1);
-	catCopy.printIdea(0);
-	catCopy.printIdea(1);
-	std::cout << "\n\n";
-	// AAnimal	a;
-	// AAnimal*	b = new AAnimal();
+	ICharacter* me = new Character("me");
+	AMateria* tmp;
+
+	tmp = src->createMateria("ice");
+	me->equip(tmp);
+	tmp = src->createMateria("cure");
+	me->equip(tmp);
+	tmp = src->createMateria("cure");
+	me->equip(tmp);
+	tmp = src->createMateria("rainbow power");
+	me->equip(tmp);
+	tmp = src->createMateria("cure");
+	me->equip(tmp);
+	tmp = src->createMateria("cure");
+	me->equip(tmp);
+	// me->unequip(1);
+
+	ICharacter* bob = new Character("bob");
+	ICharacter* charles = new Character(*(Character*)me);
+	std::cout << "slot 0" << std::endl;
+	charles->use(0, *bob);
+	std::cout << "slot 1" << std::endl;
+	charles->use(1, *bob);
+	std::cout << "slot 2" << std::endl;
+	charles->use(2, *bob);
+	std::cout << "slot 3" << std::endl;
+	charles->use(3, *bob);
+
+	delete bob;
+	delete charles;
+	delete me;
+	delete src;
+	delete oldsrc;
 	return 0;
 }
