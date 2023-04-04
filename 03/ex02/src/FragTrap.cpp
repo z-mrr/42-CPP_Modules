@@ -6,7 +6,7 @@
 /*   By: jdias-mo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/20 18:30:00 by jdias-mo          #+#    #+#             */
-/*   Updated: 2023/03/30 23:57:55 by jdias-mo         ###   ########.fr       */
+/*   Updated: 2023/04/04 13:43:44 by jdias-mo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,7 +53,7 @@ FragTrap&	FragTrap::operator=(FragTrap const& ref)
 void		FragTrap::highFivesGuys()
 {
 	if (_hp > 0 && _mp > 0)
-		std::cout << "High Fives Guys!\n";
+		std::cout << this->_name << ": High Fives Guys!\n";
 	else
-		std::cout << "Unable to request high fives.\n";
+		std::cout << this->_name << ": Unable to request high fives.\n";
 }

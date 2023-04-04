@@ -6,7 +6,7 @@
 /*   By: jdias-mo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/17 16:01:29 by jdias-mo          #+#    #+#             */
-/*   Updated: 2023/03/30 23:58:53 by jdias-mo         ###   ########.fr       */
+/*   Updated: 2023/04/04 14:22:35 by jdias-mo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,8 @@ int	main()
 	c = a;
 	c.status();
 	std::cout << '\n';
+	b.highFivesGuys();
+	b.guardGate();
 	return 0;
 }
 

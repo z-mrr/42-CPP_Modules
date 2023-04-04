@@ -6,7 +6,7 @@
 /*   By: jdias-mo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/17 16:01:47 by jdias-mo          #+#    #+#             */
-/*   Updated: 2023/03/30 23:26:50 by jdias-mo         ###   ########.fr       */
+/*   Updated: 2023/04/04 13:35:00 by jdias-mo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,11 +32,11 @@ public:
 	void		setDmg(unsigned int ad);
 
 protected:
-	std::string	_name;
-	int			_hp;
-	int			_mp;
-	int			_dmg;
-	unsigned int			_maxhp;
+	std::string		_name;
+	int				_hp;
+	int				_mp;
+	int				_dmg;
+	unsigned int	_maxhp;
 };
 
 #endif

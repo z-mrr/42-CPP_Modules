@@ -6,7 +6,7 @@
 /*   By: jdias-mo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/21 19:55:18 by jdias-mo          #+#    #+#             */
-/*   Updated: 2023/03/30 23:58:27 by jdias-mo         ###   ########.fr       */
+/*   Updated: 2023/04/04 14:21:07 by jdias-mo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,11 +15,13 @@
 DiamondTrap::DiamondTrap() : ClapTrap("DiamondTrap"), ScavTrap(), FragTrap(), _name("DiamondTrap")
 {
 	std::cout << _name << " (DiamondTrap) Default constructor was called\n";
+	this->_mp = ScavTrap::_maxmp;
 }
 
 DiamondTrap::DiamondTrap(std::string name) : ClapTrap(name + "_clap_name"), ScavTrap(), FragTrap(), _name(name)
 {
 	std::cout << _name << " (DiamondTrap) Constructor was called and values initialized\n";
+	this->_mp = ScavTrap::_maxmp;
 }
 
 DiamondTrap::DiamondTrap(DiamondTrap const& src) : ClapTrap(src), ScavTrap(src), FragTrap(src)

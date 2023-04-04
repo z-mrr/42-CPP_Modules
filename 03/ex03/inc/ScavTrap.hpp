@@ -6,7 +6,7 @@
 /*   By: jdias-mo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/20 18:30:08 by jdias-mo          #+#    #+#             */
-/*   Updated: 2023/03/22 20:51:21 by jdias-mo         ###   ########.fr       */
+/*   Updated: 2023/04/04 14:17:48 by jdias-mo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,4 +25,7 @@ public:
 
 	void		guardGate();
 	void		attack(std::string const& target);
+
+protected:
+	static const int _maxmp = 50;
 };

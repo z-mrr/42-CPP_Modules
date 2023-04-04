@@ -6,7 +6,7 @@
 /*   By: jdias-mo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/20 18:30:00 by jdias-mo          #+#    #+#             */
-/*   Updated: 2023/03/30 23:58:31 by jdias-mo         ###   ########.fr       */
+/*   Updated: 2023/04/04 14:14:27 by jdias-mo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 FragTrap::FragTrap() : ClapTrap("FragTrap")
 {
 	_hp = 100;
-	// _mp = 100;
+	_mp = 100;
 	_dmg = 30;
 	_maxhp = 100;
 	std::cout << _name << " (FragTrap) Default constructor was called\n";
