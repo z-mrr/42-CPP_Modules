@@ -40,6 +40,7 @@ void				clearFloor(Floor* floor)
 		clearFloor(floor->next);
 		delete floor->m;
 		delete floor;
+		floor = NULL;
 	}
 }
 
@@ -47,9 +48,8 @@ Character&			Character::operator=(const Character& ref)
 {
 	if (this != &ref)
 	{
-		clearFloor(this->_floor);
+		this->_floor = NULL;
 		this->_name = ref.getName();
-		this->_floor = ref._floor;
 		for (int i = 0; i < 4; i++)
 		{
 			if (this->_inventory[i])
@@ -101,15 +101,21 @@ void				Character::unequip(int idx)
 			this->_floor->m = this->_inventory[idx];
 			this->_floor->next = NULL;
 		}
-		Floor*	tmp = this->_floor;
-		while (tmp->next)
-			tmp = tmp->next;
-		tmp->m = this->_inventory[idx];
-		tmp->next = new Floor;
-		tmp->next->m = NULL;
+		else
+		{
+			Floor*	tmp = this->_floor;
+			while (this->_floor->next)
+				this->_floor = this->_floor->next;
+			this->_floor->next = new Floor;
+			this->_floor = this->_floor->next;
+			this->_floor->m = this->_inventory[idx];
+			this->_floor->next = NULL;
+			_floor = tmp;
+		}
 		this->_inventory[idx] = NULL;
 	}
-	std::cout << idx << " slot is empty\n";
+	else
+		std::cout << idx << " slot is empty\n";
 }
 
 void				Character::use(int idx, ICharacter& target)
@@ -118,7 +124,7 @@ void				Character::use(int idx, ICharacter& target)
 		return ;
 	else if (!this->_inventory[idx])
 	{
-		std::cout << target.getName() << " not attacked because " << idx << " slot if empty\n";
+		std::cout << this->getName() << " did not use materia in slot " << idx << " on " << target.getName() << " because slot is empty\n";
 		return ;
 	}
 	this->_inventory[idx]->use(target);
