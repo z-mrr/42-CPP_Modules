@@ -25,7 +25,7 @@ int main()
 	me->equip(tmp);
 	tmp = src->createMateria("cure");
 	me->equip(tmp);
-	tmp = src->createMateria("rainbow power");//unknown
+	tmp = src->createMateria("death spike");//unknown
 	me->equip(tmp);
 	tmp = src->createMateria("cure");
 	me->equip(tmp);
