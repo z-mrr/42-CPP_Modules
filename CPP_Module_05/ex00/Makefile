@@ -1,6 +1,7 @@
 NAME =			ex00
 
-SRC =			$(addsuffix .cpp,	main)
+SRC =			$(addsuffix .cpp,	main \
+									Bureaucrat)
 
 INC_DIR =		inc/
 
