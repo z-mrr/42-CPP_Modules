@@ -1,6 +1,11 @@
-NAME =			ex00
+NAME =			ex02
 
-SRC =			$(addsuffix .cpp,	main)
+SRC =			$(addsuffix .cpp,	main \
+									Bureaucrat \
+									AForm \
+									ShrubberyCreationForm \
+									RobotomyRequestForm \
+									PresidentialPardonForm)
 
 INC_DIR =		inc/
 

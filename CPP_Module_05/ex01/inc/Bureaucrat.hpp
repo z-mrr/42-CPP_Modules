@@ -20,24 +20,18 @@ public:
 	int					getGrade() const;
 	void				incrementGrade();
 	void				decrementGrade();
-	void				signForm(const Form& form, std::string reason) const;
+	void				signForm(Form& form);
 
 	class	GradeTooHighException : public std::exception
 	{
 	public:
-		virtual const char* what() const throw()
-		{
-			return "Bureaucrat: Grade is too high\n";
-		}
+		virtual const char* what() const throw();
 	};
 
 	class	GradeTooLowException : public std::exception
 	{
 	public:
-		virtual const char* what() const throw()
-		{
-			return "Bureaucrat: Grade is too low\n";
-		}
+		virtual const char* what() const throw();
 	};
 
 private:

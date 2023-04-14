@@ -3,11 +3,14 @@
 
 #include <stdexcept>
 #include <iostream>
+#include "AForm.hpp"
+
+class AForm;
 
 class Bureaucrat
 {
 public:
-	Bureaucrat(const std::string name, int grade);
+	Bureaucrat(std::string name, int grade);
 	Bureaucrat(const Bureaucrat& ref);
 	~Bureaucrat();
 
@@ -17,6 +20,8 @@ public:
 	int					getGrade() const;
 	void				incrementGrade();
 	void				decrementGrade();
+	void				signForm(AForm& form);
+	void				executeForm(AForm const& form);
 
 	class	GradeTooHighException : public std::exception
 	{
@@ -32,6 +37,7 @@ public:
 
 private:
 	Bureaucrat();
+
 	const std::string	_name;
 	int					_grade;
 };
