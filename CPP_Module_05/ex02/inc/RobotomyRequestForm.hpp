@@ -3,6 +3,8 @@
 
 #include <iostream>
 #include <stdexcept>
+#include <cstdlib>
+#include <ctime>
 #include "AForm.hpp"
 
 class RobotomyRequestForm : public AForm
@@ -13,7 +15,7 @@ public:
 	virtual ~RobotomyRequestForm();
 
 
-	const std::string	getTarget();
+	const std::string	getTarget() const;
 	virtual void		execute(Bureaucrat const& executor) const;
 
 
