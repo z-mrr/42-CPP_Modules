@@ -39,13 +39,13 @@ const char* ShrubberyCreationForm::OpenFileException::what() const throw()
 
 void ShrubberyCreationForm::printTree(std::ofstream& ofs) const
 {
-	ofs << "       ###             ###              ###\n";
-	ofs << "      #o###           #o###            #o###\n";
-	ofs << "    #####o###        #####o###        #####o###\n";
-	ofs << "   #o#\\#|#/###     #o#\\#|#/###      #o#\\#|#/###\n";
-	ofs << "    ###\\|/#o#       ###\\|/#o#        ###\\|/#o#\n";
-	ofs << "     # }|{  #        # }|{  #         # }|{  #\n";
-	ofs << "       }|{             }|{              }|{\n";
+	ofs << "       ###             ###              ###          \n";
+	ofs << "      #o###           #o###            #o###         \n";
+	ofs << "    #####o###        #####o###        #####o###      \n";
+	ofs << "   #o#\\#|#/###     #o#\\#|#/###      #o#\\#|#/###   \n";
+	ofs << "    ###\\|/#o#       ###\\|/#o#        ###\\|/#o#    \n";
+	ofs << "     # }|{  #        # }|{  #         # }|{  #       \n";
+	ofs << "       }|{             }|{              }|{          \n";
 }
 
 void	ShrubberyCreationForm::execute(Bureaucrat const& executor) const
