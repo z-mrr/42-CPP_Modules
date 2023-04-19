@@ -29,7 +29,6 @@ private:
 	ShrubberyCreationForm& operator=(const ShrubberyCreationForm& ref);
 
 	const std::string	_target;
-
 };
 
 #endif
