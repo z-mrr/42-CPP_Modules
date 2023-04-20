@@ -1,6 +1,6 @@
 #include "AForm.hpp"
 
-AForm::AForm() : _name(""), _gradeSign(150), _gradeExe(150)
+AForm::AForm() : _name(""), _signed(0), _gradeSign(150), _gradeExe(150)
 {
 	std::cout << "AForm default constructor called\n";
 }
@@ -8,6 +8,10 @@ AForm::AForm() : _name(""), _gradeSign(150), _gradeExe(150)
 AForm::AForm(const std::string name, int gradeSign, int gradeExe) : _name(name), _signed(0), _gradeSign(gradeSign), _gradeExe(gradeExe)
 {
 	std::cout << "AForm param constructor called\n";
+	if (this->getGradeSign() > 150 || this->getGradeExe() > 150)
+		throw AForm::GradeTooLowException();
+	else if (this->getGradeSign() < 1 || this->getGradeExe() < 1)
+		throw AForm::GradeTooHighException();
 }
 
 AForm::AForm(const AForm& ref) : _name(ref.getName()), _signed(ref.getSigned()), _gradeSign(ref.getGradeSign()), _gradeExe(ref.getGradeExe())

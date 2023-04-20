@@ -41,6 +41,19 @@ int	main()
 		rrf = someRandomIntern.makeForm("presidential pardon", "Bender");
 		std::cout << *rrf;
 		delete rrf;
+		cout << '\n';
+		rrf = someRandomIntern.makeForm("robotomy request", "Bender");
+		std::cout << *rrf;
+		delete rrf;
+		cout << '\n';
+		rrf = someRandomIntern.makeForm("shrubbery creation", "Bender");
+		std::cout << *rrf;
+		delete rrf;
+		cout << '\n';
+		rrf = someRandomIntern.makeForm("asd", "Bender");
+		std::cout << *rrf;
+		delete rrf;
+		cout << '\n';
 	}
 	catch (std::exception& e)
 	{

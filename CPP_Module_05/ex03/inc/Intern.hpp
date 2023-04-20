@@ -25,6 +25,10 @@ public:
 		virtual const char* what() const throw();
 	};
 
+	AForm* PresidentialPardon(const string& target);
+	AForm* RobotomyRequest(const string& target);
+	AForm* ShrubberyCreation(const string& target);
+
 	AForm*	makeForm(const string& name, const string &target);
 };
 

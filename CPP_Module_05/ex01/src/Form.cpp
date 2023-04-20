@@ -1,6 +1,6 @@
 #include "Form.hpp"
 
-Form::Form() : _name(""), _gradeSign(150), _gradeExe(150)
+Form::Form() : _name(""), _signed(0), _gradeSign(150), _gradeExe(150)
 {
 	std::cout << "Form default constructor called\n";
 }
@@ -8,6 +8,11 @@ Form::Form() : _name(""), _gradeSign(150), _gradeExe(150)
 Form::Form(const std::string name, int gradeSign, int gradeExe) : _name(name), _signed(0), _gradeSign(gradeSign), _gradeExe(gradeExe)
 {
 	std::cout << "Form param constructor called\n";
+	if (this->getGradeSign() > 150 || this->getGradeExe() > 150)
+		throw Form::GradeTooLowException();
+	else if (this->getGradeSign() < 1 || this->getGradeExe() < 1)
+		throw Form::GradeTooHighException();
+
 }
 
 Form::Form(const Form& ref) : _name(ref.getName()), _signed(ref.getSigned()), _gradeSign(ref.getGradeSign()), _gradeExe(ref.getGradeExe())
