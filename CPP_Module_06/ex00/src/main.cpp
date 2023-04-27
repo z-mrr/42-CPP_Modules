@@ -17,3 +17,10 @@ int	main(int ac, char** av)
 	}
 	return 0;
 }
+
+// dá erro se o tipo do input nao for válido segundo o subject: por ser desconhecido, ou por ultrapassar os limites do tipo
+// checka os limites nas conversoes. apenas o max e o lower, nao faz o min() de double para float pois nao faria sentido
+// mensagens variaveis apos conversao para char: caso passe os limites, ou nao seja printavel
+// parametro variavel na funçao overLimit()
+// strtold para converter string em double long antes dos checks.
+// atoi, strtof, strtod para converter string em int, float e double respetivamente, depois dos checks
