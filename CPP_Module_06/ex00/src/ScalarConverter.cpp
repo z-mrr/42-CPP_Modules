@@ -2,10 +2,25 @@
 
 Type ScalarConverter::_type = UNKNOWN;
 
+ScalarConverter::ScalarConverter()
+{}
+
+ScalarConverter::ScalarConverter(const ScalarConverter& ref)
+{
+	*this = ref;
+}
+
+ScalarConverter::~ScalarConverter()
+{}
+
+ScalarConverter& ScalarConverter::operator=(const ScalarConverter& ref)
+{
+	static_cast<void>(ref);
+	return *this;
+}
+
 void	ScalarConverter::convert(const string& str)
 {
-	if (str.empty())
-		return;
 	parseType(str);
 	switch (_type)
 	{
@@ -80,6 +95,8 @@ bool	ScalarConverter::isChar(const string& str)
 
 bool	ScalarConverter::isInt(const string& str)
 {
+	if (!str.size())
+		return false;
 	for (size_t i = 0; str[i]; i++)
 	{
 		if (!i && str[i] == '-')
@@ -151,12 +168,12 @@ bool	ScalarConverter::overLimit(const string& str, Type type)
 
 const char* ScalarConverter::OverLimitException::what() const throw()
 {
-		return "Value over type limit\n";
+		return "Value over type limit";
 }
 
 const char* ScalarConverter::UnknownTypeException::what() const throw()
 {
-		return "Type isn't CHAR, INT, FLOAT or DOUBLE\n";
+		return "Type isn't CHAR, INT, FLOAT or DOUBLE";
 }
 
 void	ScalarConverter::convertChar(const string& str)

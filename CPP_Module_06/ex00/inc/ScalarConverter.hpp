@@ -24,8 +24,6 @@ class ScalarConverter
 public:
 	static void	convert(const string&);
 
-
-
 private:
 	ScalarConverter();
 	ScalarConverter(const ScalarConverter&);

@@ -24,3 +24,4 @@ int	main(int ac, char** av)
 // parametro variavel na funçao overLimit()
 // strtold para converter string em double long antes dos checks.
 // atoi, strtof, strtod para converter string em int, float e double respetivamente, depois dos checks
+// cout com precision 1 e fixed para printar doubles e floats como no subject
