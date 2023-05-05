@@ -48,7 +48,6 @@ public:
 	}
 	unsigned int	size() const {return this->_size;}
 
-
 private:
 	unsigned int	_size;
 	T*				_arr;
