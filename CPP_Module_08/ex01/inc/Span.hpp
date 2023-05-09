@@ -16,9 +16,10 @@ public:
 	void	addNumber(int num);
 	int		shortestSpan();
 	int		longestSpan();
-	
+
 private:
 	Span();
+	//copy e operator=
 
 	unsigned int	_n;
 	vector<int>	_num;
