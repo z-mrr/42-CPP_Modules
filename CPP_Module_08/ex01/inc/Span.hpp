@@ -4,6 +4,7 @@
 #include <iostream>
 #include <vector>
 #include <algorithm>
+#include <climits>
 
 using std::cout;
 using std::vector;
@@ -11,18 +12,21 @@ using std::vector;
 class Span {
 public:
 	Span(unsigned int n);
+	Span(Span const& other);
 	~Span();
+	Span&			operator=(Span const& other);
 
-	void	addNumber(int num);
-	int		shortestSpan();
-	int		longestSpan();
+	void			addNumber(int num);
+	void			addNumbers(vector<int>::iterator it, vector<int>::iterator ite);
+	unsigned int	shortestSpan();
+	unsigned int	longestSpan();
 
 private:
 	Span();
-	//copy e operator=
+
 
 	unsigned int	_n;
-	vector<int>	_num;
+	vector<int>		_vec;
 };
 
 #endif
