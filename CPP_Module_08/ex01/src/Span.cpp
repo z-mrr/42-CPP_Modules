@@ -31,8 +31,7 @@ void	Span::addNumber(int num) {
 void	Span::addNumbers(vector<int>::iterator it, vector<int>::iterator ite) {
 	if (_n - static_cast<unsigned int>(_vec.size()) < static_cast<unsigned int>(std::distance(it, ite)))
 		throw std::out_of_range("range too big for vector\n");
-	std::copy(it, ite, std::back_inserter(_vec));
-	// _vec.insert(_vec.end(), it, ite);
+	std::copy(it, ite, std::back_inserter(_vec)); // _vec.insert(_vec.end(), it, ite);
 }
 
 unsigned int	Span::shortestSpan() {
