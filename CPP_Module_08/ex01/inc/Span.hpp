@@ -5,6 +5,8 @@
 #include <vector>
 #include <algorithm>
 #include <climits>
+#include <cstdlib>
+#include <ctime>
 
 using std::cout;
 using std::vector;

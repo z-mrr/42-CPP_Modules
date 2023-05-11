@@ -30,13 +30,13 @@ void	Span::addNumber(int num) {
 
 void	Span::addNumbers(vector<int>::iterator it, vector<int>::iterator ite) {
 	if (_n - static_cast<unsigned int>(_vec.size()) < static_cast<unsigned int>(std::distance(it, ite)))
-		throw std::out_of_range("range too big for vector\n");
+		throw std::out_of_range("vec is not big enough\n");
 	std::copy(it, ite, std::back_inserter(_vec)); // _vec.insert(_vec.end(), it, ite);
 }
 
 unsigned int	Span::shortestSpan() {
 	if (_vec.size() < 2)
-		throw std::out_of_range("N < 2\n");
+		throw std::out_of_range("vec.size < 2\n");
 	unsigned int	ret = UINT_MAX; // UINT_MAX = abs(INT_MAX - INT_MIN)
 	unsigned int	tmp;
 	vector<int>	cpy(_vec);
@@ -51,7 +51,7 @@ unsigned int	Span::shortestSpan() {
 
 unsigned int	Span::longestSpan() {
 	if (_vec.size() < 2)
-		throw std::out_of_range("N < 2\n");
+		throw std::out_of_range("vec.size < 2\n");
 	vector<int>::iterator	imin = std::min_element(_vec.begin(), _vec.end());
 	vector<int>::iterator	imax = std::max_element(_vec.begin(), _vec.end());
 	return static_cast<unsigned int>(abs(*imax - *imin));
