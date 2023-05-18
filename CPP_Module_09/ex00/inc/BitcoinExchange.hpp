@@ -7,6 +7,7 @@
 #include <cstdlib>
 #include <exception>
 #include <string>
+#include <iomanip>
 
 using std::cout;
 using std::cerr;
@@ -18,6 +19,7 @@ using std::isdigit;
 class Date {
 public:
 	Date();
+	Date(const Date&);
 	Date(const string&);
 	~Date();
 

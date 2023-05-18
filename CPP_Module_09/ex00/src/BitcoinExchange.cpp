@@ -6,6 +6,10 @@
 
 Date::Date() : _year(), _month(), _day(), _str() {}
 
+Date::Date(const Date& other) {
+	*this = other;
+}
+
 Date::Date(const string& date) {
 	_year = atoi(date.substr(0, 4).c_str());
 	_month = atoi(date.substr(5, 2).c_str());
@@ -85,7 +89,13 @@ string	Date::getStr() const{
  /****** BitcoinExchange ****/
 /***************************/
 
-BitcoinExchange::BitcoinExchange(string fileName) : _inputFile(fileName.c_str()), _dataFile("data.csv") {
+BitcoinExchange::BitcoinExchange() {};
+
+BitcoinExchange::BitcoinExchange(const BitcoinExchange& other) {
+	*this = other;
+}
+
+BitcoinExchange::BitcoinExchange(string fileName) : _line(), _inputFile(fileName.c_str()), _dataFile("data.csv") {
 	if (!_inputFile.is_open() || !_dataFile.is_open()) {
 			throw std::ios_base::failure("Error: could not open file.");
 	}
@@ -106,12 +116,24 @@ BitcoinExchange::~BitcoinExchange() {
 		_dataFile.close();
 }
 
+BitcoinExchange& BitcoinExchange::operator=(const BitcoinExchange& other) {
+	static_cast<void>(other);
+	return *this;
+}
+
 void	BitcoinExchange::process() {
+	if (_inputFile.peek() == std::ifstream::traits_type::eof()) {
+		cerr << "Error: input file is empty.\n";
+		return ;
+	}
 	for (int i = 0; getline(_inputFile, _line); i++) {
 		if (!i && _line == "date | value") {
 			continue;
 		} else if (_line.size() < 14  || !isValidDate()) {
-			cerr << "Error: bad input => " + _line << '\n';
+			if (_line.empty())
+				cerr << "Error: bad imput => empty line\n";
+			else
+				cerr << "Error: bad input => " + _line << '\n';
 		} else if (isValidVal()){
 			_inputDate = Date(_line.substr(0, 10));
 			_inputVal = strtof(_line.substr(13).c_str(), NULL);
