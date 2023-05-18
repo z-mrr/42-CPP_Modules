@@ -27,10 +27,10 @@ public:
 	bool	operator>(const Date&) const;
 	bool	operator<=(const Date&) const;
 	bool	operator>=(const Date&) const;
+
 	string	getStr() const;
 
 private:
-
 	int		_year, _month, _day;
 	string	_str;
 };
