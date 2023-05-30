@@ -11,6 +11,7 @@
 #include <iterator>
 #include <list>
 #include <ctime>
+#include <iomanip>
 
 using std::cout;
 using std::cerr;
@@ -25,10 +26,14 @@ public:
 	PmergeMe(list<int>&);
 	~PmergeMe();
 
-	void			printCnt(vector<int>&) const;
+	template <typename C>
+	void			printCnt(const C& cnt);
 	vector<int>		mergeSortVector(vector<int>&);
 	vector<int>		mergeVector(vector<int>&, vector<int>&);
 	vector<int>		insertionSortVector(vector<int>&);
+	list<int>		mergeSortList(list<int>&);
+	list<int>		mergeList(list<int>&, list<int>&);
+	list<int>		insertionSortList(list<int>&);
 
 private:
 	PmergeMe();
