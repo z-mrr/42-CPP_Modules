@@ -39,7 +39,7 @@ PmergeMe& PmergeMe::operator=(const PmergeMe& other) {
 template <typename C>
 void	PmergeMe::printCnt(const C& cnt) {
 	if (cnt.empty()) {
-		return;
+		throw std::out_of_range("Error");
 	}
 	typename C::const_iterator it = cnt.begin();
 	for (; it != --cnt.end(); ++it) {
