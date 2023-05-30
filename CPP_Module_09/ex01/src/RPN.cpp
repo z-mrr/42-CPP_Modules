@@ -65,3 +65,12 @@ int	RPN::process() {
 	}
 	return _op.top();
 }
+
+// Start with an empty stack to hold the operands.
+// Read the expression from left to right, one token at a time.
+// If the token is an operand (a number), push it onto the stack.
+// If the token is an operator, pop the top two operands from the stack.
+// Apply the operator to the operands in the order they were popped (the second popped operand is the left-hand side, and the first popped operand is the right-hand side).
+// Push the result of the operation back onto the stack.
+// Repeat steps 3 to 6 until all tokens have been processed.
+// The final result will be the only value remaining on the stack.
