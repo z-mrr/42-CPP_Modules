@@ -97,7 +97,7 @@ BitcoinExchange::BitcoinExchange(const BitcoinExchange& other) {
 
 BitcoinExchange::BitcoinExchange(string fileName) : _line(), _inputFile(fileName.c_str()), _dataFile("data.csv") {
 	if (!_inputFile.is_open() || !_dataFile.is_open()) {
-			throw std::ios_base::failure("Error: could not open file.");
+			throw std::runtime_error("Error: could not open file.");
 	}
 	for (int i = 0; getline(_dataFile, _line); i++) {
 		if (!i)
