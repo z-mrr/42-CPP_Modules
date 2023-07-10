@@ -4,7 +4,7 @@ using std::cout;
 using std::cerr;
 
 int	main(int ac, char** av) {
-	if (ac != 2 || !av[1]) {
+	if (ac != 2 || !av[1] || !av[1][0]) {
 		cerr << "Error\n";
 		return 1;
 	}
